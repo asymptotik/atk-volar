@@ -88,13 +88,18 @@
 </template>
 
 <script lang="ts">
-export default {
+import { defineComponent, PropType } from "@vue/composition-api";
+export default defineComponent({
   name: "HelloWorld",
   props: {
-    msg: String,
-    onClick: Function,
+    msg: {
+      type: String,
+    },
+    onClick: {
+      type: Function as PropType<() => void>,
+    },
   },
-};
+});
 </script>
 
 <!-- Add "scoped" attribute to limit CSS to this component only -->
